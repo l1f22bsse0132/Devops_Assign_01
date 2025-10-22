@@ -1,8 +1,16 @@
-/* Global Styles Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #e74c3c;
+    --secondary-color: #3498db;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
 }
 
 body {
@@ -14,7 +22,6 @@ body {
 }
 
 /* Navigation Styles */
-<<<<<<< HEAD
 .navbar {
     background: #fff;
     padding: 1rem 3rem;
@@ -25,15 +32,27 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-=======
-.main-nav {
-    background-color: #2c3e50;
+.site-header {
+    background: var(--dark-color);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
->>>>>>> feature/sticky-nav
 }
 
 .logo h1 {
@@ -42,99 +61,54 @@ body {
     font-weight: bold;
 }
 
-.nav-links {
+.brand-logo h1 {
+    color: var(--light-color);
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.main-menu {
     display: flex;
     list-style: none;
     gap: 2.5rem;
 }
 
-.nav-links a {
-    color: #34495e;
+.btn-primary {
+    background-color: #3498db;
+.main-menu a {
+    color: var(--light-color);
     text-decoration: none;
     font-weight: 500;
     padding: 0.5rem 1rem;
-    border-radius: 5px;
+    border-radius: 25px;
     transition: all 0.3s ease;
 }
 
-.nav-links a:hover {
-    background-color: #3498db;
-    color: white;
+.main-menu a:hover {
+    background-color: var(--light-color);
+    color: var(--dark-color);
 }
 
-/* Main Content Area */
-main {
-    max-width: 1400px;
-    margin: 100px auto 2rem;
-    padding: 0 2rem;
+/* Main Content Layout */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 100px auto 0;
+    padding: 2rem;
 }
 
-/* Hero Section */
-.hero {
-    background: url('https://via.placeholder.com/1200x400') no-repeat center center;
-    background-size: cover;
+/* Hero Banner */
+.main-hero {
+    background: url('https://via.placeholder.com/1200x600') center/cover no-repeat;
     color: white;
-    padding: 6rem 2rem;
+    padding: 4rem 2rem;
     text-align: center;
     border-radius: 15px;
     margin-bottom: 3rem;
     position: relative;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.5);
-    border-radius: 15px;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-}
-
-.hero h2 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-/* Button Styles */
-<<<<<<< HEAD
-.cta-button {
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
-    color: white;
-    padding: 15px 40px;
-    border: none;
-    border-radius: 25px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
-}
-
-.cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
-=======
-.btn-primary {
-    background-color: #3498db;
-    color: white;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
 .btn-primary:hover {
     background-color: #2980b9;
->>>>>>> feature/buttons
 }
 
 /* Product Display */
@@ -145,7 +119,25 @@ main {
     margin: 2rem 0;
 }
 
-.product-card {
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+/* Product Styles */
+.products-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin: 3rem 0;
+
+  
+  
+  
+  }
+
+.product-showcase-card {
     background: white;
     border-radius: 15px;
     padding: 1.5rem;
@@ -168,43 +160,26 @@ footer {
     margin-top: 4rem;
 }
 
-/* Contact Form Styles */
-.contact-form {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+/* Utility Classes */
+.text-center { text-align: center; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+    .content-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
 }
 
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 2px solid #bdc3c7;
-    border-radius: 5px;
-    transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: #3498db;
-    outline: none;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-    .navbar {
-        padding: 1rem;
+    .nav-container {
         flex-direction: column;
         gap: 1rem;
     }
@@ -216,9 +191,14 @@ footer {
     .hero h2 {
         font-size: 2rem;
     }
+}
+
+@media (max-width: 480px) {
+    .products-showcase {
+        grid-template-columns: 1fr;
+    }
     
-    main {
-        margin-top: 140px;
-        padding: 0 1rem;
+    .brand-logo h1 {
+        font-size: 1.5rem;
     }
 }
