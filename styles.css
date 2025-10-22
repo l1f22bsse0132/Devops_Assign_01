@@ -1,4 +1,3 @@
-/* MobileStore Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -15,14 +14,24 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.7;
-    color: #333;
-    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
 }
 
-/* Header and Navigation */
-<<<<<<< HEAD
+/* Navigation Styles */
+.navbar {
+    background: #fff;
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 .site-header {
     background: var(--dark-color);
     padding: 0;
@@ -39,16 +48,17 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-=======
-.header-main {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
->>>>>>> feature/gradient-header
+}
+
+.logo h1 {
+    color: #e74c3c;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 .brand-logo h1 {
@@ -60,9 +70,11 @@ body {
 .main-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
+.btn-primary {
+    background-color: #3498db;
 .main-menu a {
     color: var(--light-color);
     text-decoration: none;
@@ -85,34 +97,6 @@ body {
 }
 
 /* Hero Banner */
-<<<<<<< HEAD
-.hero-banner {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 5rem 3rem;
-    text-align: center;
-    border-radius: 20px;
-    margin-bottom: 3rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-banner::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
-    animation: float 20s linear infinite;
-}
-
-@keyframes float {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    100% { transform: translate(-50px, -50px) rotate(360deg); }
-=======
 .main-hero {
     background: url('https://via.placeholder.com/1200x600') center/cover no-repeat;
     color: white;
@@ -123,16 +107,16 @@ body {
     position: relative;
 }
 
-.main-hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(44, 62, 80, 0.7);
-    border-radius: 15px;
->>>>>>> feature/hero-animation
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+/* Product Display */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
 }
 
 .hero-title {
@@ -147,70 +131,30 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem;
     margin: 3rem 0;
-}
+
+  
+  
+  
+  }
 
 .product-showcase-card {
     background: white;
     border-radius: 15px;
-    padding: 2rem;
+    padding: 1.5rem;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
+    transition: all 0.3s ease;
+    text-align: center;
 }
 
-.product-showcase-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    transition: left 0.5s ease;
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-.product-showcase-card:hover::before {
-    left: 100%;
-}
-
-.product-showcase-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-}
-
-/* Pricing Styles */
-.pricing {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin: 1rem 0;
-}
-
-.current-price {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
-}
-
-.original-price {
-    text-decoration: line-through;
-    color: #7f8c8d;
-}
-
-.discount-badge {
-    background: var(--success-color);
-    color: white;
-    padding: 0.25rem 0.75rem;
-    border-radius: 15px;
-    font-size: 0.875rem;
-    font-weight: bold;
-}
-
-/* Footer */
-.site-footer {
-    background: var(--dark-color);
-    color: var(--light-color);
+/* Footer Styles */
+footer {
+    background: #2c3e50;
+    color: #ecf0f1;
     text-align: center;
     padding: 3rem 2rem;
     margin-top: 4rem;
@@ -240,22 +184,11 @@ body {
         gap: 1rem;
     }
     
-    .main-menu {
-        flex-wrap: wrap;
-        justify-content: center;
+    .nav-links {
         gap: 1rem;
     }
     
-    .content-wrapper {
-        margin-top: 160px;
-        padding: 1rem;
-    }
-    
-    .hero-banner {
-        padding: 3rem 1rem;
-    }
-    
-    .hero-title {
+    .hero h2 {
         font-size: 2rem;
     }
 }
