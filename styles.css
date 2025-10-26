@@ -28,7 +28,6 @@ body {
 }
 
 /* Header Styles with Conflict */
-<<<<<<< HEAD
 .app-header {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -53,25 +52,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-=======
-.main-header {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    padding: 1.5rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: var(--shadow);
-}
-
-.nav-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    gap: 3rem;
->>>>>>> feature/header-redesign
 }
 
 .brand {
@@ -136,7 +116,6 @@ body {
 }
 
 /* Hero Section with Animation Conflict */
-<<<<<<< HEAD
 .hero-section {
     background: linear-gradient(135deg, var(--secondary), var(--accent));
     color: white;
@@ -174,39 +153,6 @@ body {
     font-weight: 800;
     margin-bottom: 1.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-=======
-.hero-banner {
-    background: linear-gradient(135deg, 
-        rgba(0, 78, 137, 0.9), 
-        rgba(255, 107, 53, 0.9)),
-        url('https://via.placeholder.com/1200x600') center/cover;
-    color: white;
-    padding: 5rem 3rem;
-    text-align: center;
-    border-radius: 25px;
-    margin-bottom: 3rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-banner::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, 
-        transparent 0%, 
-        rgba(255, 255, 255, 0.1) 50%, 
-        transparent 100%);
-    animation: shimmer 3s ease-in-out infinite;
-}
-
-@keyframes shimmer {
-    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
->>>>>>> feature/hero-effects
 }
 
 .hero-subtitle {
